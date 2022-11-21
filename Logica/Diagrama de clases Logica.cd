@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logica.Procesamiento">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgACAAAAAAQ=</HashCode>
+      <FileName>Procesamiento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.ServicioCliente" BaseTypeListCollapsed="true">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAACAEAAAACAgAABAEAAIA=</HashCode>
+      <FileName>ServicioCliente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logica.ServicioProducto">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAEBAAACAgAABACAAAA=</HashCode>
+      <FileName>ServicioProducto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.ServiciosAdministrador" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiciosAdministrador.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Logica.IserviceAdmin">
+    <Position X="6.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IserviceAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logica.IserviceCliente&lt;T&gt;">
+    <Position X="8.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAgAABAEAAIA=</HashCode>
+      <FileName>IserviceCliente.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -25,7 +25,7 @@ namespace Datos
             {
                 var result = cmd.ExecuteNonQuery();
                 Conexion.Close();
-                return result == 1 ? "se agregó el producto" : "error al agregar";
+                return result == 1 ? "se agregó el producto" : "error al agregar el Producto";
             }
             catch (Exception)
             {
@@ -58,66 +58,39 @@ namespace Datos
             Conexion.Open();
             cmd = new SqlCommand("EditarProducto", Conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //cmd.Parameters.AddWithValue("@id_cliente ", cliente.id_cliente);
-            //cmd.Parameters.AddWithValue("@Cedula", cliente.Cedula);
-            //cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-            //cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
-            //cmd.Parameters.AddWithValue("@Correo", cliente.Correo);
-            //cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
+            cmd.Parameters.AddWithValue("@Codigo", producto.Codigo);
+            cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+            cmd.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
+            cmd.Parameters.AddWithValue("@PrecioVenta", producto.ValorVenta);
             try
             {
                 var result = cmd.ExecuteNonQuery();
                 Conexion.Close();
-                return result == 1 ? "se edtió el Cliente" : " error al editar ";
+                return result == 1 ? "se edtió el Producto" : "error al editar el Producto";
             }
             catch (Exception)
             {
                 Conexion.Close();
                 return "error al editar";
             }
-
-
         }
 
-        public int BuscarPorId(string Cedula)
+        public string DeleteProduct(Producto producto)
         {
-            int count = 0;
-
             Conexion.Open();
-            cmd = new SqlCommand("BuscarID", Conexion);
+            cmd = new SqlCommand("EliminarProducto", Conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Cedula", Cedula);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                count = Convert.ToInt32(cmd.ExecuteScalar());
-            }
-            catch (Exception)
-            {
-                Conexion.Close();
-                return count;
-            }
-            Conexion.Close();
-            return count;
-        }
-
-        public string Elimnar(string Cedula)
-        {
-
-            Conexion.Open();
-            cmd = new SqlCommand("Eliminar", Conexion);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Cedula", Cedula);
+            cmd.Parameters.AddWithValue("@Codigo", producto.Codigo);
             try
             {
                 var result = cmd.ExecuteNonQuery();
                 Conexion.Close();
-                return result == 1 ? "se eliminó el Cliente" : "error al eliminar el cliente ";
+                return result > 0 ? "se eliminó el Producto" : "error al eliminar el Producto";
             }
             catch (Exception)
             {
                 Conexion.Close();
-                return "error al editar";
+                return "error al eliminar";
             }
         }
     }

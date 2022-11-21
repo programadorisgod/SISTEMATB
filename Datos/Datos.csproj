@@ -98,7 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioAdministrador.cs" />
     <Compile Include="RepositorioCliente.cs" />
+    <Compile Include="RepositorioEntrada.cs" />
     <Compile Include="RepositorioProducto.cs" />
+    <Compile Include="RepositorioProveedor.cs" />
     <Compile Include="RepositorioVentas.cs" />
   </ItemGroup>
   <ItemGroup>

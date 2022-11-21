@@ -21,7 +21,6 @@ namespace Gestion_Ciber_Cafe_GUI
         public Productos()
         {
             InitializeComponent();
-            RefreshLista();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -37,6 +36,7 @@ namespace Gestion_Ciber_Cafe_GUI
             textBoxNombre.Text = "";
             textBoxValorVenta.Text = "";
             textBoxDescripcion.Text = "";
+            textBoxCodigo.Enabled = true;
         }
         void Llenar(Entidades.Producto producto)
         {
@@ -44,22 +44,25 @@ namespace Gestion_Ciber_Cafe_GUI
             textBoxNombre.Text = producto.Nombre;
             textBoxValorVenta.Text = producto.ValorVenta.ToString();
             textBoxDescripcion.Text = producto.Descripcion;
+            textBoxCodigo.Enabled = false;
         }
         void Guardar()
         {
-            if (textBoxCodigo.Text == "" || textBoxNombre.Text == "" || textBoxValorVenta.Text == "")
+            if (textBoxCodigo.Text.Trim() == "" || textBoxNombre.Text.Trim() == "" || textBoxValorVenta.Text == "")
             {
-                MessageBox.Show("Llene todos los campos, por favor");
+                msgError("Llene todos los campos, por favor");
             }
             else
             {
                 if (row == -1)
                 {
+                    labelError.Visible = false;
                     producto.Codigo = int.Parse(textBoxCodigo.Text);
                     producto.Nombre = textBoxNombre.Text;
                     producto.Descripcion = textBoxDescripcion.Text;
                     producto.ValorVenta = double.Parse(textBoxValorVenta.Text);
                     var Respuesta = MessageBox.Show("Desea guardar el producto?", "Responde...", MessageBoxButtons.YesNo);
+
                     if (Respuesta == DialogResult.Yes)
                     {
                         var mensaje = servicioProducto.Guardar(producto);
@@ -71,18 +74,19 @@ namespace Gestion_Ciber_Cafe_GUI
                 else
                 {
                     var Respuesta = MessageBox.Show("Desea modificar el producto?", "Responde...", MessageBoxButtons.YesNo);
+
                     if (Respuesta == DialogResult.Yes)
                     {
+                        labelError.Visible = false;
                         producto.Codigo = int.Parse(textBoxCodigo.Text);
                         producto.Nombre = textBoxNombre.Text;
                         producto.Descripcion = textBoxDescripcion.Text;
                         producto.ValorVenta = double.Parse(textBoxValorVenta.Text);
-                        //var mensaje = servicioProducto.Edit(producto, row);
-                        //MessageBox.Show(mensaje);
+                        var mensaje = servicioProducto.Edit(producto, row);
+                        MessageBox.Show(mensaje);
                         textBoxCodigo.Focus();
                         RefreshLista();
                     }
-                        
                     Limpiar();
                     row = -1;
                 }
@@ -96,8 +100,8 @@ namespace Gestion_Ciber_Cafe_GUI
                 var Respuesta = MessageBox.Show("Desea borrar el producto?", "Responde...", MessageBoxButtons.YesNo);
                 if (Respuesta == DialogResult.Yes)
                 {
-            //        var mensaje = servicioProducto.Delete(row);
-          //          MessageBox.Show(mensaje);
+                    var mensaje = servicioProducto.Delete(producto);
+                    MessageBox.Show(mensaje);
                     RefreshLista();
                 }
                 Limpiar();
@@ -135,33 +139,15 @@ namespace Gestion_Ciber_Cafe_GUI
             pictureBox5.BackColor = Color.FromArgb(30, 30, 30);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.BorderStyle = BorderStyle.Fixed3D;
-        }
-
-        private void pictureBox6_MouseMove(object sender, MouseEventArgs e)
-        {
-            pictureBox6.BackColor = Color.PowderBlue;
-            pictureBox6.BorderStyle = BorderStyle.FixedSingle;
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
-            Limpiar();
-            RefreshLista();
         }
 
         private void Productos_Load(object sender, EventArgs e)
         {
             textBoxCodigo.Focus();
+            RefreshLista();
         }
 
         private void Productos_MouseDown(object sender, MouseEventArgs e)
@@ -184,6 +170,10 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void textBoxCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 textBoxNombre.Focus();
@@ -249,7 +239,8 @@ namespace Gestion_Ciber_Cafe_GUI
         private void grillaListaProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
-        //    Llenar(servicioProducto.GetAll()[row]);
+            producto = servicioProducto.GetAll()[row];
+            Llenar(producto);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -260,7 +251,8 @@ namespace Gestion_Ciber_Cafe_GUI
         private void grillaListaProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
-      //      Llenar(servicioProducto.GetAll()[row]);
+            producto = servicioProducto.GetAll()[row];
+            Llenar(producto);
         }
 
         private void btnGenerarCodigoBarras_Click(object sender, EventArgs e)
@@ -292,7 +284,7 @@ namespace Gestion_Ciber_Cafe_GUI
                 }
                 catch (Exception ep)
                 {
-                    MessageBox.Show(string.Format("Lo sentimos, no se pudo generar el codigo :(. \nMayor informacion:\n{0}, ", ep.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information));
+                    MessageBox.Show(string.Format("Lo sentimos, no se pudo generar el codigo. \nMayor informacion:\n{0}, ", ep.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information));
                 }
                 labelError.Visible = false;
             }

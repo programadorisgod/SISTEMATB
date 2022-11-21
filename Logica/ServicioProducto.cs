@@ -8,7 +8,7 @@ using Datos;
 
 namespace Logica
 {
-    public class ServicioProducto : IserviceProduct<Producto>
+    public class ServicioProducto : IserviceStandard<Producto>
     {
         List<Producto> ListaProductos;
         RepositorioProducto repositorioProducto = new RepositorioProducto();
@@ -38,46 +38,33 @@ namespace Logica
             }
             catch (Exception)
             {
-                return "Se ha prodciono un error, el producto no fue guardado";
+                return "Se ha producido un error, el producto no fue guardado";
 
             }
         }
         public string Delete(Producto producto)
         {
-            //try
-            //{
-            //    ListaProductos.RemoveAt(row);
-            //    repositorioProducto.Actualizar(ListaProductos, false);
-            //    return "El producto fue eliminado correctamente";
-
-            //}
-            //catch (Exception)
-            //{
-
-            //    return "El producto no fue eliminado correctamente";
-            //}
-            return "";
+            try
+            {
+                repositorioProducto.DeleteProduct(producto);
+                ListaProductos = GetAll();
+                return "El producto fue eliminado correctamente";
+            }
+            catch (Exception)
+            {
+                return "El producto no fue eliminado correctamente";
+            }
         }
-        public string Edit(Producto productonuevo, int row)
+        public string Edit(Producto producto, int row)
         {
-            //Producto productoviejo = GetById(productonuevo, row);
-            //try
-            //{
-            //    if (productoviejo == null)
-            //    {
-            //        ListaProductos[row] = productonuevo;
-            //        return repositorioProducto.Actualizar(ListaProductos, false);
-            //    }
-            //    else
-            //    {
-            //        return "Ya existe un producto con este codigo";
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    return "Producto no editado";
-            //}
-            return "";
+            try
+            {
+                return repositorioProducto.EditProduct(producto);
+            }
+            catch (Exception)
+            {
+                return "Producto no editado";
+            }
         }
         public Producto GetById(Producto producto, int row)
         {

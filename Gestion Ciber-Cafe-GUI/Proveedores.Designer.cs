@@ -37,35 +37,35 @@
             this.labelListaProveedores = new System.Windows.Forms.Label();
             this.grillaListaProveedores = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBoxRazonSocial = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBoxTelefono = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelSubMenu = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.labelProveedor = new System.Windows.Forms.Label();
-            this.textboxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelSubMenu = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBoxTelefono = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBoxRazonSocial = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaListaProveedores)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panelSubMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -185,12 +185,122 @@
             this.panel1.Controls.Add(this.textBoxCedula);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.labelProveedor);
-            this.panel1.Controls.Add(this.textboxNombre);
+            this.panel1.Controls.Add(this.textBoxNombre);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(239, 460);
             this.panel1.TabIndex = 48;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.linea;
+            this.pictureBox3.Location = new System.Drawing.Point(11, 321);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(214, 4);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 139;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBoxRazonSocial
+            // 
+            this.textBoxRazonSocial.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRazonSocial.Location = new System.Drawing.Point(12, 302);
+            this.textBoxRazonSocial.Name = "textBoxRazonSocial";
+            this.textBoxRazonSocial.Size = new System.Drawing.Size(212, 20);
+            this.textBoxRazonSocial.TabIndex = 138;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 19);
+            this.label2.TabIndex = 137;
+            this.label2.Text = "Razon Social";
+            // 
+            // labelError
+            // 
+            this.labelError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelError.AutoSize = true;
+            this.labelError.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.labelError.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.importante__1_;
+            this.labelError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelError.Location = new System.Drawing.Point(70, 362);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(72, 13);
+            this.labelError.TabIndex = 136;
+            this.labelError.Text = "ErrorMessage";
+            this.labelError.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.linea;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 273);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(214, 4);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 82;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBoxTelefono
+            // 
+            this.textBoxTelefono.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxTelefono.Location = new System.Drawing.Point(12, 254);
+            this.textBoxTelefono.Name = "textBoxTelefono";
+            this.textBoxTelefono.Size = new System.Drawing.Size(212, 20);
+            this.textBoxTelefono.TabIndex = 81;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 232);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Telefono";
+            // 
+            // panelSubMenu
+            // 
+            this.panelSubMenu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelSubMenu.Controls.Add(this.btnEliminar);
+            this.panelSubMenu.Controls.Add(this.btnGuardar);
+            this.panelSubMenu.Location = new System.Drawing.Point(0, 378);
+            this.panelSubMenu.Name = "panelSubMenu";
+            this.panelSubMenu.Size = new System.Drawing.Size(239, 82);
+            this.panelSubMenu.TabIndex = 79;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(0, 39);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(239, 39);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(0, 0);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(239, 39);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -242,14 +352,14 @@
             this.labelProveedor.TabIndex = 72;
             this.labelProveedor.Text = "Detalle de Proveedor";
             // 
-            // textboxNombre
+            // textBoxNombre
             // 
-            this.textboxNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.textboxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textboxNombre.Location = new System.Drawing.Point(12, 206);
-            this.textboxNombre.Name = "textboxNombre";
-            this.textboxNombre.Size = new System.Drawing.Size(212, 20);
-            this.textboxNombre.TabIndex = 68;
+            this.textBoxNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxNombre.Location = new System.Drawing.Point(12, 206);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(212, 20);
+            this.textBoxNombre.TabIndex = 68;
             // 
             // label4
             // 
@@ -260,87 +370,6 @@
             this.label4.Size = new System.Drawing.Size(60, 19);
             this.label4.TabIndex = 67;
             this.label4.Text = "Nombre";
-            // 
-            // panelSubMenu
-            // 
-            this.panelSubMenu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panelSubMenu.Controls.Add(this.btnEliminar);
-            this.panelSubMenu.Controls.Add(this.btnGuardar);
-            this.panelSubMenu.Location = new System.Drawing.Point(0, 378);
-            this.panelSubMenu.Name = "panelSubMenu";
-            this.panelSubMenu.Size = new System.Drawing.Size(239, 82);
-            this.panelSubMenu.TabIndex = 79;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(0, 39);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(239, 39);
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(0, 0);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(239, 39);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.linea;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 273);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(214, 4);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 82;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBoxTelefono
-            // 
-            this.textBoxTelefono.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTelefono.Location = new System.Drawing.Point(12, 254);
-            this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(212, 20);
-            this.textBoxTelefono.TabIndex = 81;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 232);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 19);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "Telefono";
-            // 
-            // labelError
-            // 
-            this.labelError.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelError.AutoSize = true;
-            this.labelError.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelError.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.importante__1_;
-            this.labelError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelError.Location = new System.Drawing.Point(70, 362);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(72, 13);
-            this.labelError.TabIndex = 136;
-            this.labelError.Text = "ErrorMessage";
-            this.labelError.Visible = false;
             // 
             // pictureBox5
             // 
@@ -374,35 +403,6 @@
             this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
             this.pictureBox6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox6_MouseMove);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.linea;
-            this.pictureBox3.Location = new System.Drawing.Point(11, 321);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(214, 4);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 139;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBoxRazonSocial
-            // 
-            this.textBoxRazonSocial.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRazonSocial.Location = new System.Drawing.Point(12, 302);
-            this.textBoxRazonSocial.Name = "textBoxRazonSocial";
-            this.textBoxRazonSocial.Size = new System.Drawing.Size(212, 20);
-            this.textBoxRazonSocial.TabIndex = 138;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 280);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 19);
-            this.label2.TabIndex = 137;
-            this.label2.Text = "Razon Social";
-            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,13 +423,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.grillaListaProveedores)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelSubMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panelSubMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,7 +448,7 @@
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelProveedor;
-        private System.Windows.Forms.TextBox textboxNombre;
+        private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelSubMenu;
         private System.Windows.Forms.Button btnEliminar;

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelError = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -41,7 +41,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.labelEntrada = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.textboxCantidad = new System.Windows.Forms.TextBox();
+            this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.labelEntrada);
             this.panel1.Controls.Add(this.pictureBox10);
-            this.panel1.Controls.Add(this.textboxCantidad);
+            this.panel1.Controls.Add(this.textBoxCantidad);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -144,6 +144,8 @@
             this.textBoxPrecioCompra.Name = "textBoxPrecioCompra";
             this.textBoxPrecioCompra.Size = new System.Drawing.Size(212, 20);
             this.textBoxPrecioCompra.TabIndex = 77;
+            this.textBoxPrecioCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPrecioCompra_KeyDown);
+            this.textBoxPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrecioCompra_KeyPress);
             // 
             // label5
             // 
@@ -182,6 +184,7 @@
             this.btnGuardar.Text = "            Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // labelEntrada
             // 
@@ -204,14 +207,16 @@
             this.pictureBox10.TabIndex = 69;
             this.pictureBox10.TabStop = false;
             // 
-            // textboxCantidad
+            // textBoxCantidad
             // 
-            this.textboxCantidad.BackColor = System.Drawing.SystemColors.Control;
-            this.textboxCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textboxCantidad.Location = new System.Drawing.Point(12, 282);
-            this.textboxCantidad.Name = "textboxCantidad";
-            this.textboxCantidad.Size = new System.Drawing.Size(212, 20);
-            this.textboxCantidad.TabIndex = 68;
+            this.textBoxCantidad.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxCantidad.Location = new System.Drawing.Point(12, 282);
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(212, 20);
+            this.textBoxCantidad.TabIndex = 68;
+            this.textBoxCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCantidad_KeyDown);
+            this.textBoxCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCantidad_KeyPress);
             // 
             // label4
             // 
@@ -337,27 +342,27 @@
             this.grillaRegistroEntradas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grillaRegistroEntradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grillaRegistroEntradas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grillaRegistroEntradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grillaRegistroEntradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grillaRegistroEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaRegistroEntradas.Location = new System.Drawing.Point(13, 63);
             this.grillaRegistroEntradas.MultiSelect = false;
             this.grillaRegistroEntradas.Name = "grillaRegistroEntradas";
             this.grillaRegistroEntradas.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grillaRegistroEntradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grillaRegistroEntradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.grillaRegistroEntradas.RowHeadersVisible = false;
             this.grillaRegistroEntradas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grillaRegistroEntradas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -412,6 +417,8 @@
             this.Name = "Entrada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrada";
+            this.Load += new System.EventHandler(this.Entrada_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Entrada_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -438,7 +445,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label labelEntrada;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.TextBox textboxCantidad;
+        private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;

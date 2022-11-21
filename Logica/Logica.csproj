@@ -95,11 +95,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IserviceAdmin.cs" />
-    <Compile Include="IserviceProduct.cs" />
+    <Compile Include="IserviceStandard.cs" />
     <Compile Include="Iservices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioCliente.cs" />
+    <Compile Include="ServicioEntrada.cs" />
     <Compile Include="ServicioProducto.cs" />
+    <Compile Include="ServicioProveedor.cs" />
     <Compile Include="ServiciosAdministrador.cs" />
     <Compile Include="ServicioVentas.cs" />
   </ItemGroup>

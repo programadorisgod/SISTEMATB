@@ -73,37 +73,39 @@ namespace Gestion_Ciber_Cafe_GUI
             {
                 MessageBox.Show("Por favor, ingrese el codigo del producto, para poder agregarlo", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (txtDescripcion.Text.Trim() == "")
-            {
-                MessageBox.Show("Por favor llene la descripcion, para poder agregarlo", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            if (YaExiste())
-            {
-                MessageBox.Show("Este producto ya se agregó a carrito de compras", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            string mensaje = string.Empty;
-            int realizar = servicioVentas.reducirCantidad(Convert.ToInt32(txtcodigoproducto.Text), Convert.ToInt32(txtCantidad.Value.ToString()), out mensaje);
-            decimal subtotal = 0;
-            decimal precioventa = 0;
-            decimal.TryParse(precioventa_, out precioventa);
-            if (realizar > 0)
-            {
-                subtotal = Convert.ToDecimal(txtCantidad.Value.ToString()) * precioventa;
-                GrillaClientes.Rows.Add(new object[]
-                {"",
-                    txtcodigoproducto.Text,
-                    txtDescripcion.Text,
-                    txtCantidad.Value.ToString(),
-                    precioventa.ToString(),
-                    subtotal.ToString()
-                });
-                CalcularTotalPagar();
-            }
             else
             {
-                MessageBox.Show(mensaje, "¡Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (YaExiste())
+                {
+                    MessageBox.Show("Este producto ya se agregó a carrito de compras", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    string mensaje = string.Empty;
+                    int realizar = servicioVentas.reducirCantidad(Convert.ToInt32(txtcodigoproducto.Text), Convert.ToInt32(txtCantidad.Value.ToString()), out mensaje);
+                    decimal subtotal = 0;
+                    decimal precioventa = 0;
+                    decimal.TryParse(precioventa_, out precioventa);
+                    if (realizar > 0)
+                    {
+                        subtotal = Convert.ToDecimal(txtCantidad.Value.ToString()) * precioventa;
+                        GrillaClientes.Rows.Add(new object[]
+                        {"",
+                        txtcodigoproducto.Text,
+                        txtDescripcion.Text,
+                        txtCantidad.Value.ToString(),
+                        precioventa.ToString(),
+                        subtotal.ToString()
+                        });
+                        CalcularTotalPagar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "¡Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
             }
+
             txtcodigoproducto.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
             txtStock.Text = string.Empty;

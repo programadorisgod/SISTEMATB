@@ -24,21 +24,14 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@Codigo", codigoproducto);
                 cmd.Parameters.AddWithValue("@Cantidad", cantidad);
                 respuesta = cmd.ExecuteNonQuery();
-                if (respuesta < 1)
-                {
-                    mensaje = "No se puede puede vender, no contamos con el stock suficiente, para realizar la venta";
-                }
             }
             catch (Exception d)
             {
-                mensaje = d.Message;
                 respuesta = 0;
-
             }
+
             Conexion.Close();
             return respuesta;
-
-
         }
 
 

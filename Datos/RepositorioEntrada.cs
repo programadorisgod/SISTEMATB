@@ -50,5 +50,30 @@ namespace Datos
 
             return EntryList;
         }
+
+        public List<EntradaProducto> Search(string attribute, string sentence)
+        {
+            List<EntradaProducto> EntryList = new List<EntradaProducto>();
+            try
+            {
+                string ssql = String.Format("SELECT * FROM Entrada WHERE " + attribute + " LIKE '%" + sentence + "%'");
+                cmd = new SqlCommand(ssql, Conexion);
+                Conexion.Open();
+                var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EntryList.Add(new EntradaProducto(reader.GetInt32(0), reader.GetDateTime(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), double.Parse(reader.GetDecimal(5).ToString()), double.Parse(reader.GetDecimal(6).ToString())));
+                }
+                Conexion.Close();
+            }
+            catch (Exception)
+            {
+                Conexion.Close();
+                return EntryList;
+            }
+
+            return EntryList;
+        }
     }
 }

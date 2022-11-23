@@ -34,7 +34,7 @@
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPageProductos = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.labelBuscar = new System.Windows.Forms.Label();
             this.grillaListaProductos = new System.Windows.Forms.DataGridView();
@@ -61,7 +61,6 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.tabPrincipal.SuspendLayout();
             this.tabPageProductos.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -113,7 +112,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.Controls.Add(this.comboBoxBuscar);
-            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.textBoxBuscar);
             this.panel1.Controls.Add(this.labelBuscar);
             this.panel1.Controls.Add(this.grillaListaProductos);
@@ -123,28 +121,29 @@
             this.panel1.Size = new System.Drawing.Size(714, 438);
             this.panel1.TabIndex = 1;
             // 
-            // btnBuscar
+            // comboBoxBuscar
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources._64673__1___1___1___1_;
-            this.btnBuscar.Location = new System.Drawing.Point(673, 24);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(28, 20);
-            this.btnBuscar.TabIndex = 71;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.comboBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxBuscar.FormattingEnabled = true;
+            this.comboBoxBuscar.Items.AddRange(new object[] {
+            "Codigo",
+            "Nombre"});
+            this.comboBoxBuscar.Location = new System.Drawing.Point(431, 23);
+            this.comboBoxBuscar.Name = "comboBoxBuscar";
+            this.comboBoxBuscar.Size = new System.Drawing.Size(99, 21);
+            this.comboBoxBuscar.TabIndex = 72;
             // 
             // textBoxBuscar
             // 
             this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxBuscar.Location = new System.Drawing.Point(484, 24);
+            this.textBoxBuscar.Location = new System.Drawing.Point(536, 24);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(190, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(165, 20);
             this.textBoxBuscar.TabIndex = 4;
             this.textBoxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBuscar_KeyPress);
             // 
@@ -153,7 +152,7 @@
             this.labelBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscar.Location = new System.Drawing.Point(321, 26);
+            this.labelBuscar.Location = new System.Drawing.Point(373, 24);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(52, 16);
             this.labelBuscar.TabIndex = 3;
@@ -488,20 +487,6 @@
             this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             this.pictureBox5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseMove);
             // 
-            // comboBoxBuscar
-            // 
-            this.comboBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxBuscar.FormattingEnabled = true;
-            this.comboBoxBuscar.Items.AddRange(new object[] {
-            "Nombre"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(379, 23);
-            this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(99, 21);
-            this.comboBoxBuscar.TabIndex = 72;
-            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,7 +553,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.CheckBox mostraretiqueta;
         private System.Windows.Forms.Label labelError;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
     }
 }

@@ -32,7 +32,7 @@
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.SubMenuSalidas = new System.Windows.Forms.Panel();
             this.btnDetalleVentas = new System.Windows.Forms.Button();
-            this.btnReporteVentas = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
             this.btnSalidas = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelMarca = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnReporteVentas = new System.Windows.Forms.Button();
             this.panelMenuLateral.SuspendLayout();
             this.SubMenuSalidas.SuspendLayout();
             this.panelInfo.SuspendLayout();
@@ -77,12 +78,13 @@
             // SubMenuSalidas
             // 
             this.SubMenuSalidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.SubMenuSalidas.Controls.Add(this.btnDetalleVentas);
             this.SubMenuSalidas.Controls.Add(this.btnReporteVentas);
+            this.SubMenuSalidas.Controls.Add(this.btnDetalleVentas);
+            this.SubMenuSalidas.Controls.Add(this.btnVenta);
             this.SubMenuSalidas.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubMenuSalidas.Location = new System.Drawing.Point(0, 325);
             this.SubMenuSalidas.Name = "SubMenuSalidas";
-            this.SubMenuSalidas.Size = new System.Drawing.Size(233, 94);
+            this.SubMenuSalidas.Size = new System.Drawing.Size(233, 137);
             this.SubMenuSalidas.TabIndex = 10;
             // 
             // btnDetalleVentas
@@ -103,23 +105,23 @@
             this.btnDetalleVentas.UseVisualStyleBackColor = true;
             this.btnDetalleVentas.Click += new System.EventHandler(this.btnDetalleVentas_Click);
             // 
-            // btnReporteVentas
+            // btnVenta
             // 
-            this.btnReporteVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporteVentas.FlatAppearance.BorderSize = 0;
-            this.btnReporteVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteVentas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporteVentas.Location = new System.Drawing.Point(0, 0);
-            this.btnReporteVentas.Name = "btnReporteVentas";
-            this.btnReporteVentas.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.btnReporteVentas.Size = new System.Drawing.Size(233, 45);
-            this.btnReporteVentas.TabIndex = 10;
-            this.btnReporteVentas.Text = "Reporte de ventas";
-            this.btnReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteVentas.UseVisualStyleBackColor = true;
-            this.btnReporteVentas.Click += new System.EventHandler(this.btnReporteVentas_Click);
+            this.btnVenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVenta.FlatAppearance.BorderSize = 0;
+            this.btnVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVenta.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVenta.Location = new System.Drawing.Point(0, 0);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.btnVenta.Size = new System.Drawing.Size(233, 45);
+            this.btnVenta.TabIndex = 10;
+            this.btnVenta.Text = "Venta";
+            this.btnVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // btnSalidas
             // 
@@ -144,7 +146,7 @@
             this.panelInfo.Controls.Add(this.labelMarca);
             this.panelInfo.Controls.Add(this.linkLabelPrincipal);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfo.Location = new System.Drawing.Point(0, 419);
+            this.panelInfo.Location = new System.Drawing.Point(0, 462);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(233, 100);
             this.panelInfo.TabIndex = 8;
@@ -328,6 +330,24 @@
             this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox4_MouseMove);
             // 
+            // btnReporteVentas
+            // 
+            this.btnReporteVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporteVentas.FlatAppearance.BorderSize = 0;
+            this.btnReporteVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteVentas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReporteVentas.Location = new System.Drawing.Point(0, 90);
+            this.btnReporteVentas.Name = "btnReporteVentas";
+            this.btnReporteVentas.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.btnReporteVentas.Size = new System.Drawing.Size(233, 45);
+            this.btnReporteVentas.TabIndex = 12;
+            this.btnReporteVentas.Text = "Reporte de ventas";
+            this.btnReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteVentas.UseVisualStyleBackColor = true;
+            this.btnReporteVentas.Click += new System.EventHandler(this.btnReporteVentas_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +399,7 @@
         private System.Windows.Forms.Button btnSalidas;
         private System.Windows.Forms.Panel SubMenuSalidas;
         private System.Windows.Forms.Button btnDetalleVentas;
+        private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Button btnReporteVentas;
     }
 }

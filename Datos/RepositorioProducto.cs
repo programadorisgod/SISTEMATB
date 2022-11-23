@@ -93,5 +93,30 @@ namespace Datos
                 return "error al eliminar";
             }
         }
+
+        public List<Producto> Search(string attribute, string sentence)
+        {
+            List<Producto> ProductList = new List<Producto>();
+            try
+            {
+                string ssql = String.Format("SELECT * FROM Producto WHERE " + attribute + " LIKE '%" + sentence + "%'");
+                cmd = new SqlCommand(ssql, Conexion);
+                Conexion.Open();
+                var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ProductList.Add(new Producto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), double.Parse(reader.GetDecimal(3).ToString()), reader.GetInt32(4)));
+                }
+                Conexion.Close();
+            }
+            catch (Exception)
+            {
+                Conexion.Close();
+                return ProductList;
+            }
+
+            return ProductList;
+        }
     }
 }

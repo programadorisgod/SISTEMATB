@@ -61,6 +61,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.tabPrincipal.SuspendLayout();
             this.tabPageProductos.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,8 +79,8 @@
             // tabPrincipal
             // 
             this.tabPrincipal.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPrincipal.Controls.Add(this.tabPageProductos);
             this.tabPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,11 +107,12 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Controls.Add(this.comboBoxBuscar);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.textBoxBuscar);
             this.panel1.Controls.Add(this.labelBuscar);
@@ -133,6 +135,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(28, 20);
             this.btnBuscar.TabIndex = 71;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // textBoxBuscar
             // 
@@ -143,13 +146,14 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(190, 20);
             this.textBoxBuscar.TabIndex = 4;
+            this.textBoxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBuscar_KeyPress);
             // 
             // labelBuscar
             // 
             this.labelBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscar.Location = new System.Drawing.Point(426, 25);
+            this.labelBuscar.Location = new System.Drawing.Point(321, 26);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(52, 16);
             this.labelBuscar.TabIndex = 3;
@@ -157,8 +161,8 @@
             // 
             // grillaListaProductos
             // 
-            this.grillaListaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.grillaListaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grillaListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grillaListaProductos.BackgroundColor = System.Drawing.Color.Azure;
@@ -484,6 +488,20 @@
             this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             this.pictureBox5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseMove);
             // 
+            // comboBoxBuscar
+            // 
+            this.comboBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxBuscar.FormattingEnabled = true;
+            this.comboBoxBuscar.Items.AddRange(new object[] {
+            "Nombre"});
+            this.comboBoxBuscar.Location = new System.Drawing.Point(379, 23);
+            this.comboBoxBuscar.Name = "comboBoxBuscar";
+            this.comboBoxBuscar.Size = new System.Drawing.Size(99, 21);
+            this.comboBoxBuscar.TabIndex = 72;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,5 +569,6 @@
         private System.Windows.Forms.CheckBox mostraretiqueta;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox comboBoxBuscar;
     }
 }

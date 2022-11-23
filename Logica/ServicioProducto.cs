@@ -80,5 +80,10 @@ namespace Logica
 
             return null;
         }
+
+        public List<Producto> Search(string attribute, string sentence)
+        {
+            return repositorioProducto.Search(attribute, sentence);
+        }
     }
 }

@@ -149,8 +149,8 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void btnReporteVentas_Click(object sender, EventArgs e)
         {
-            Ventas ventas = new Ventas();
-            ventas.Show();
+            Reporte_de_ventas reporte_De_Ventas = new Reporte_de_ventas();
+            reporte_De_Ventas.Show();
             OcultarSubmenu();
         }
 
@@ -163,8 +163,10 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            //Codigo...
+            Ventas ventas = new Ventas();
+            ventas.Show();
             OcultarSubmenu();
+           
         }
     }
 }

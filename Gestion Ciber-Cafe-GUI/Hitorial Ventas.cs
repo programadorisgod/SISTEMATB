@@ -109,7 +109,7 @@ namespace Gestion_Ciber_Cafe_GUI
             {
                 filas += "<tr>";
                 filas += "<td>" + row.Cells["Codigo"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Descripcion"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Nomp"].Value.ToString() + "</td>";
                 filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
                 filas += "<td>" + row.Cells["SubTotal"].Value.ToString() + "</td>";
                 filas += "</tr>";

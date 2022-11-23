@@ -105,6 +105,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="ReporteVentas.cs" />
     <Compile Include="Ventas.cs" />
+    <Compile Include="VistaEntradaProducto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

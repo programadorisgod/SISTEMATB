@@ -239,8 +239,11 @@ namespace Gestion_Ciber_Cafe_GUI
         private void grillaListaProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
-            producto = servicioProducto.GetAll()[row];
-            Llenar(producto);
+            if (row != -1)
+            {
+                producto = servicioProducto.GetAll()[row];
+                Llenar(producto);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -251,8 +254,11 @@ namespace Gestion_Ciber_Cafe_GUI
         private void grillaListaProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
-            producto = servicioProducto.GetAll()[row];
-            Llenar(producto);
+            if (row != -1)
+            {
+                producto = servicioProducto.GetAll()[row];
+                Llenar(producto);
+            }
         }
 
         private void btnGenerarCodigoBarras_Click(object sender, EventArgs e)
@@ -311,7 +317,7 @@ namespace Gestion_Ciber_Cafe_GUI
         private void textBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             string old = textBoxBuscar.Text;
-            
+
             if (e.KeyChar.ToString() == "\b" && textBoxBuscar.Text != "")
             {
                 textBoxBuscar.Text = textBoxBuscar.Text.Remove(textBoxBuscar.Text.Length - 1);

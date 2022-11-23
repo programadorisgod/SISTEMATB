@@ -245,15 +245,20 @@ namespace Gestion_Ciber_Cafe_GUI
         private void grillaListaProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
-            proveedor = servicioProveedor.GetAll()[row];
-            Llenar(proveedor);
+            if (row != -1) {
+                proveedor = servicioProveedor.GetAll()[row];
+                Llenar(proveedor);
+            } 
         }
 
         private void grillaListaProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
-            proveedor = servicioProveedor.GetAll()[row];
-            Llenar(proveedor);
+            if (row != -1)
+            {
+                proveedor = servicioProveedor.GetAll()[row];
+                Llenar(proveedor);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

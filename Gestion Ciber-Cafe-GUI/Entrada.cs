@@ -30,7 +30,7 @@ namespace Gestion_Ciber_Cafe_GUI
 
         void RefreshLista()
         {
-            grillaRegistroEntradas.DataSource = servicioEntrada.GetAll();
+            grillaRegistroEntradas.DataSource = servicioEntrada.GetAllOfView();
         }
         void Limpiar()
         {

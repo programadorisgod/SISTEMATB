@@ -11,16 +11,23 @@ namespace Logica
     public class ServicioEntrada
     {
         List<EntradaProducto> ListaEntradas;
+        List<VistaEntradaProducto> ListaVista;
         RepositorioEntrada repositorioEntrada = new RepositorioEntrada();
 
         public ServicioEntrada()
         {
-            ListaEntradas = repositorioEntrada.GetEntryList();
+            ListaEntradas = repositorioEntrada.GetEntranceList();
+            ListaVista = repositorioEntrada.GetListViewEntrance();
         }
 
         public List<EntradaProducto> GetAll()
         {
-            return ListaEntradas = repositorioEntrada.GetEntryList();
+            return ListaEntradas = repositorioEntrada.GetEntranceList();
+        }
+
+        public List<VistaEntradaProducto> GetAllOfView()
+        {
+            return ListaVista = repositorioEntrada.GetListViewEntrance();
         }
 
         public string Guardar(EntradaProducto entrada)
@@ -29,7 +36,7 @@ namespace Logica
             try
             {
                 entrada.MontoTotal = entrada.Cantidad * entrada.PrecioCompra;
-                Guardado = repositorioEntrada.AddEntry(entrada);
+                Guardado = repositorioEntrada.AddEntrance(entrada);
                 return Guardado;
             }
             catch (Exception)

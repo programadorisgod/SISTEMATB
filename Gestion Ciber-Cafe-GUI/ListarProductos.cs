@@ -31,9 +31,10 @@ namespace Gestion_Ciber_Cafe_GUI
                 {
                     "",
                     item.Codigo,
+                    item.Nombre,
                     item.Descripcion,
-                    item.Stock = 50,
-                    item.ValorVenta = 5000
+                    item.Stock,
+                    item.ValorVenta
                     
                 }) ;
             }

@@ -21,7 +21,9 @@ namespace Gestion_Ciber_Cafe_GUI
 
         Logica.ServicioVentas servicioVentas = new Logica.ServicioVentas();
         Logica.ServicioCliente servicioCliente = new Logica.ServicioCliente();
+        Logica.ServicioProducto servicioProducto = new Logica.ServicioProducto();
         Entidades.Ventas ventas = new Entidades.Ventas();
+        Entidades.Producto producto = new Entidades.Producto();
         public Ventas()
         {
             InitializeComponent();
@@ -81,8 +83,7 @@ namespace Gestion_Ciber_Cafe_GUI
             }
 
             string mensaje = string.Empty;
-            //  int realizar = servicioVentas.reducirCantidad(codigoproducto, Convert.ToInt32(txtCantidad.Value.ToString()), out mensaje);
-            int realizar = 4;
+            int realizar = servicioVentas.reducirCantidad(Convert.ToInt32(txtcodigoproducto.Text), Convert.ToInt32(txtCantidad.Value.ToString()), out mensaje);
             decimal subtotal = 0;
             decimal precioventa = 0;
             decimal.TryParse(precioventa_, out precioventa);
@@ -101,8 +102,12 @@ namespace Gestion_Ciber_Cafe_GUI
             }
             else
             {
-                MessageBox.Show("Error", "¡Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(mensaje, "¡Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            txtcodigoproducto.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            txtStock.Text = string.Empty;
+            txtCantidad.Value = 1;
         }
 
         void RealizarVenta()
@@ -143,21 +148,16 @@ namespace Gestion_Ciber_Cafe_GUI
 
                 int realizado = servicioVentas.Insertar(ventas, out mensaje);
 
-                if (realizado < 1)
-                {
-                    MessageBox.Show(mensaje, "¡Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    MessageBox.Show("Venta realizada con exito", "¡Gracias por comprar!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+
+                MessageBox.Show("Venta realizada con exito", "¡Gracias por comprar!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                 DocClien.Text = "";
                 GrillaClientes.Rows.Clear();
                 txtnombreclie.Text = "";
                 lbltotalF.Text = "";
                 DocClien.Focus();
             }
-           
+
         }
 
         private bool YaExiste()
@@ -241,14 +241,12 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void txtcodigoproducto_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            string mensaje = string.Empty;
-            if (e.KeyData == Keys.Enter)
-            {
 
+        }
 
-
-
-            }
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

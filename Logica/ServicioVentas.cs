@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,8 @@ namespace Logica
     {
         Datos.RepositorioVentas repositorioVentas = new Datos.RepositorioVentas();
         Datos.RepositorioCliente repositorioCliente = new Datos.RepositorioCliente();
+        Datos.RepositorioProducto repositorioProducto = new Datos.RepositorioProducto();
+
         public int reducirCantidad(int codigoproducto, int cantidad, out string mensaje)
         {
 
@@ -20,9 +24,10 @@ namespace Logica
         {
             return repositorioVentas.Cantidadnormal(codigoproducto, cantidad, out mensaje);
         }
+       
         public int Insertar(Entidades.Ventas venta, out string mensaje)
         {
-          return repositorioVentas.Insertar(venta, out mensaje);
+            return repositorioVentas.Insertar(venta, out mensaje);
         }
         public int BuscarporID(string cedula)
         {

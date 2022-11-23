@@ -26,7 +26,7 @@ namespace Datos
                 respuesta = cmd.ExecuteNonQuery();
                 if (respuesta < 1)
                 {
-                    mensaje = "No se puede redicir la cantidad";
+                    mensaje = "No se puede puede vender, no contamos con el stock suficiente, para realizar la venta";
                 }
             }
             catch (Exception d)
@@ -35,6 +35,7 @@ namespace Datos
                 respuesta = 0;
 
             }
+            Conexion.Close();
             return respuesta;
 
 
@@ -48,7 +49,7 @@ namespace Datos
             try
             {
                 Conexion.Open();
-                cmd = new SqlCommand("ReducirStock", Conexion);
+                cmd = new SqlCommand("AumentarStock", Conexion);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo", codigoproducto);
                 cmd.Parameters.AddWithValue("@Cantidad", cantidad);
@@ -64,10 +65,11 @@ namespace Datos
                 respuesta = 0;
 
             }
+            Conexion.Close();
             return respuesta;
 
         }
-
+      
         public int Insertar(Entidades.Ventas venta, out string mensaje)
         {
 

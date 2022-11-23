@@ -62,11 +62,11 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtCC = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bntBuscarProducto = new System.Windows.Forms.PictureBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnimprimir = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.Buscar = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bntBuscarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -473,11 +473,11 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tabPage2.Controls.Add(this.txtCC);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.bntBuscarProducto);
             this.tabPage2.Controls.Add(this.btnRegistrar);
-            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.btnimprimir);
-            this.tabPage2.Controls.Add(this.txtBuscar);
-            this.tabPage2.Controls.Add(this.Buscar);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.pictureBox8);
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
@@ -486,6 +486,35 @@
             this.tabPage2.Size = new System.Drawing.Size(953, 438);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lista Clientes";
+            // 
+            // txtCC
+            // 
+            this.txtCC.Location = new System.Drawing.Point(121, 16);
+            this.txtCC.Name = "txtCC";
+            this.txtCC.Size = new System.Drawing.Size(127, 20);
+            this.txtCC.TabIndex = 135;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 13);
+            this.label6.TabIndex = 134;
+            this.label6.Text = "Buscar por cedula: ";
+            // 
+            // bntBuscarProducto
+            // 
+            this.bntBuscarProducto.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.bntBuscarProducto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.bntBuscarProducto.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources._64673;
+            this.bntBuscarProducto.Location = new System.Drawing.Point(254, 16);
+            this.bntBuscarProducto.Name = "bntBuscarProducto";
+            this.bntBuscarProducto.Size = new System.Drawing.Size(22, 20);
+            this.bntBuscarProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bntBuscarProducto.TabIndex = 133;
+            this.bntBuscarProducto.TabStop = false;
+            this.bntBuscarProducto.Click += new System.EventHandler(this.bntBuscarProducto_Click);
             // 
             // btnRegistrar
             // 
@@ -505,21 +534,6 @@
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources._64673;
-            this.pictureBox1.Location = new System.Drawing.Point(265, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            // 
             // btnimprimir
             // 
             this.btnimprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -535,23 +549,6 @@
             this.btnimprimir.Text = "Descargar pdf";
             this.btnimprimir.UseVisualStyleBackColor = false;
             this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(69, 14);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(190, 20);
-            this.txtBuscar.TabIndex = 2;
-            // 
-            // Buscar
-            // 
-            this.Buscar.AutoSize = true;
-            this.Buscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar.Location = new System.Drawing.Point(11, 15);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(52, 16);
-            this.Buscar.TabIndex = 1;
-            this.Buscar.Text = "Buscar:";
             // 
             // dataGridView1
             // 
@@ -608,6 +605,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(35, 33);
             this.pictureBox8.TabIndex = 4;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox5
             // 
@@ -675,7 +673,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bntBuscarProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -700,8 +698,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label Buscar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button btnimprimir;
@@ -722,8 +718,10 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label labelDetalleCliente;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnListaClientes;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox bntBuscarProducto;
+        private System.Windows.Forms.TextBox txtCC;
     }
 }

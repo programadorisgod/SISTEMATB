@@ -35,6 +35,7 @@
             this.GrillaProductos = new System.Windows.Forms.DataGridView();
             this.seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +80,7 @@
             this.GrillaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.seleccionar,
             this.Codigo,
+            this.Nombre,
             this.Descripcion,
             this.Stock,
             this.PrecioVenta});
@@ -111,6 +113,12 @@
             this.Codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Codigo.Width = 120;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Descripcion
             // 
@@ -157,6 +165,7 @@
         private System.Windows.Forms.DataGridView GrillaProductos;
         private System.Windows.Forms.DataGridViewButtonColumn seleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;

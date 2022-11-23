@@ -46,7 +46,7 @@ namespace Datos
             var reader = cmd.ExecuteReader();
             while ((reader.Read()))
             {
-                clientes.Add(new Cliente(reader.GetInt32(0),reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
+                clientes.Add(new Cliente(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
             }
             Cerrar();
             return clientes;
@@ -58,7 +58,7 @@ namespace Datos
             Conexion.Open();
             cmd = new SqlCommand("EditarCliente", Conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_cliente ",cliente.id_cliente);
+            cmd.Parameters.AddWithValue("@id_cliente ", cliente.id_cliente);
             cmd.Parameters.AddWithValue("@Cedula", cliente.Cedula);
             cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
             cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
@@ -75,7 +75,7 @@ namespace Datos
                 Conexion.Close();
                 return "error al editar";
             }
-            
+
 
         }
 
@@ -120,7 +120,34 @@ namespace Datos
                 return "error al editar";
             }
         }
-        
+
+        public List<Cliente> ObtenerCLiente(string cedula)
+        {
+            List<Cliente> cliente = new List<Cliente>();
+            try
+            {
+
+                string ssql = String.Format("select  id_cliente,cedula,Nombre,Telefono,Correo, Direccion from Clientes  where Cedula =  @cedula");
+                cmd = new SqlCommand(ssql, Conexion);
+                cmd.Parameters.Add(new SqlParameter("@cedula", cedula));
+                Conexion.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cliente.Add(new Cliente(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
+                }
+                Cerrar();
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                cliente = new List<Cliente> ();
+            }
+            Conexion.Close();
+            return cliente;
+        }
+
+
     }
 
 }

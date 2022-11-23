@@ -26,6 +26,11 @@ namespace Logica
             return "Cliente no encontrado";
         }
 
+        public List<Cliente> obtenerporcc(string cedula) { 
+            return repositorioCliente.ObtenerCLiente(cedula);
+        }
+
+
         public string Edit(Cliente Cliente, Cliente Clienteold)
         {
             var encontro = repositorioCliente.BuscarPorId(Clienteold.Cedula);

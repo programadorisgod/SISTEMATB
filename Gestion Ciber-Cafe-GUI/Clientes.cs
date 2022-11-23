@@ -26,6 +26,7 @@ namespace Gestion_Ciber_Cafe_GUI
         Entidades.Cliente cliente = new Entidades.Cliente();
         Logica.ServiciosAdministrador administrador = new Logica.ServiciosAdministrador();
         Logica.ServicioCliente servicioCliente = new Logica.ServicioCliente();
+        
         public Clientes()
         {
             InitializeComponent();
@@ -132,10 +133,7 @@ namespace Gestion_Ciber_Cafe_GUI
         {
             dataGridView1.DataSource = servicioCliente.GetAll();
         }
-        void cargarold()
-        {
-
-        }
+       
         void Editar()
         {
             Entidades.Cliente clienteold = new Entidades.Cliente();
@@ -280,9 +278,10 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void btnimprimir_Click(object sender, EventArgs e)
         {
+            string nombredoc = "Listado de clientes";
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
-
+            saveFile.FileName = string.Format("{0}.pdf", nombredoc);
+            saveFile.Filter = "Pdf Files|*.pdf";
             Administrador admin = administrador.Obtener();
 
             string pagimahtml_texto = Properties.Resources.pag.ToString();
@@ -407,22 +406,6 @@ namespace Gestion_Ciber_Cafe_GUI
             Eliminar();
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-        }
-
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            pictureBox1.BackColor = Color.PowderBlue;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnListaClientes_Click(object sender, EventArgs e)
         {
@@ -436,6 +419,35 @@ namespace Gestion_Ciber_Cafe_GUI
         }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntBuscarProducto_Click(object sender, EventArgs e)
+        {
+            if (txtCC.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese una cedula, para realizar la busqueda");
+            }
+            else
+            {
+                List<Cliente> lista = new List<Cliente>();
+                lista = servicioCliente.obtenerporcc(txtCC.Text.ToString());
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show("Lo sentimos, la cedula ingresada, no se encuentra" +
+                        "registrada en nuestra base de datos");
+                }
+                else
+                {
+                    dataGridView1.DataSource = lista;
+                }
+               
+               
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
         {
 
         }

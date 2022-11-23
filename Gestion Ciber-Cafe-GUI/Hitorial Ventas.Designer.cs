@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.Calendario = new System.Windows.Forms.DateTimePicker();
+            this.grillaHistorial = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnimprimir = new System.Windows.Forms.Button();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbltotalF = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
-            this.grillaPComprados = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txtnombreclie = new System.Windows.Forms.TextBox();
             this.DocClien = new System.Windows.Forms.TextBox();
@@ -46,27 +50,31 @@
             this.Fechaventa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Calendario = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnimprimir = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaPComprados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaHistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnRegresar);
             this.groupBox1.Controls.Add(this.btnimprimir);
             this.groupBox1.Controls.Add(this.pictureBox8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtCedula);
+            this.groupBox1.Controls.Add(this.Calendario);
+            this.groupBox1.Controls.Add(this.grillaHistorial);
+            this.groupBox1.Controls.Add(this.btnRegresar);
             this.groupBox1.Controls.Add(this.lbltotalF);
             this.groupBox1.Controls.Add(this.lbltotal);
-            this.groupBox1.Controls.Add(this.grillaPComprados);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtnombreclie);
             this.groupBox1.Controls.Add(this.DocClien);
@@ -75,7 +83,6 @@
             this.groupBox1.Controls.Add(this.Fechaventa);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.Calendario);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -86,6 +93,97 @@
             this.groupBox1.Size = new System.Drawing.Size(754, 615);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(311, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.TabIndex = 153;
+            this.label7.Text = "Documento Cliente:";
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(417, 78);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(161, 20);
+            this.txtCedula.TabIndex = 152;
+            // 
+            // Calendario
+            // 
+            this.Calendario.Location = new System.Drawing.Point(67, 79);
+            this.Calendario.Name = "Calendario";
+            this.Calendario.Size = new System.Drawing.Size(227, 20);
+            this.Calendario.TabIndex = 151;
+            // 
+            // grillaHistorial
+            // 
+            this.grillaHistorial.AllowUserToAddRows = false;
+            this.grillaHistorial.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grillaHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grillaHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Descripcion,
+            this.Cantidad,
+            this.SubTotal});
+            this.grillaHistorial.Location = new System.Drawing.Point(24, 294);
+            this.grillaHistorial.MultiSelect = false;
+            this.grillaHistorial.Name = "grillaHistorial";
+            this.grillaHistorial.ReadOnly = true;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.grillaHistorial.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.grillaHistorial.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.grillaHistorial.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.grillaHistorial.RowTemplate.Height = 24;
+            this.grillaHistorial.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.grillaHistorial.Size = new System.Drawing.Size(686, 257);
+            this.grillaHistorial.TabIndex = 150;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Descripcion.Width = 270;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Cantidad.Width = 70;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SubTotal.Width = 80;
             // 
             // btnRegresar
             // 
@@ -96,38 +194,14 @@
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.arrow_left_12777;
             this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.Location = new System.Drawing.Point(621, 12);
+            this.btnRegresar.Location = new System.Drawing.Point(613, 12);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 1);
             this.btnRegresar.Size = new System.Drawing.Size(127, 33);
             this.btnRegresar.TabIndex = 149;
             this.btnRegresar.Text = "       Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
-            // 
-            // btnimprimir
-            // 
-            this.btnimprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnimprimir.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnimprimir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnimprimir.Location = new System.Drawing.Point(604, 566);
-            this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.btnimprimir.Size = new System.Drawing.Size(127, 33);
-            this.btnimprimir.TabIndex = 22;
-            this.btnimprimir.Text = "Descargar pdf";
-            this.btnimprimir.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox8.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.printer_print_22133__1_;
-            this.pictureBox8.Location = new System.Drawing.Point(563, 566);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(35, 33);
-            this.pictureBox8.TabIndex = 21;
-            this.pictureBox8.TabStop = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // lbltotalF
             // 
@@ -152,51 +226,6 @@
             this.lbltotal.TabIndex = 19;
             this.lbltotal.Text = "Total Facturado:";
             // 
-            // grillaPComprados
-            // 
-            this.grillaPComprados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grillaPComprados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grillaPComprados.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.grillaPComprados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grillaPComprados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.grillaPComprados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grillaPComprados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grillaPComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaPComprados.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.grillaPComprados.Location = new System.Drawing.Point(16, 296);
-            this.grillaPComprados.MultiSelect = false;
-            this.grillaPComprados.Name = "grillaPComprados";
-            this.grillaPComprados.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grillaPComprados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.grillaPComprados.RowHeadersVisible = false;
-            this.grillaPComprados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grillaPComprados.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.grillaPComprados.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grillaPComprados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grillaPComprados.Size = new System.Drawing.Size(706, 248);
-            this.grillaPComprados.TabIndex = 18;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -210,22 +239,24 @@
             // 
             // txtnombreclie
             // 
-            this.txtnombreclie.Location = new System.Drawing.Point(376, 151);
+            this.txtnombreclie.Location = new System.Drawing.Point(376, 158);
             this.txtnombreclie.Name = "txtnombreclie";
+            this.txtnombreclie.ReadOnly = true;
             this.txtnombreclie.Size = new System.Drawing.Size(133, 20);
             this.txtnombreclie.TabIndex = 16;
             // 
             // DocClien
             // 
-            this.DocClien.Location = new System.Drawing.Point(127, 194);
+            this.DocClien.Location = new System.Drawing.Point(127, 198);
             this.DocClien.Name = "DocClien";
+            this.DocClien.ReadOnly = true;
             this.DocClien.Size = new System.Drawing.Size(133, 20);
             this.DocClien.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(288, 154);
+            this.label5.Location = new System.Drawing.Point(288, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 14;
@@ -234,7 +265,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 201);
+            this.label4.Location = new System.Drawing.Point(21, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 13;
@@ -242,15 +273,16 @@
             // 
             // Fechaventa
             // 
-            this.Fechaventa.Location = new System.Drawing.Point(127, 151);
+            this.Fechaventa.Location = new System.Drawing.Point(127, 158);
             this.Fechaventa.Name = "Fechaventa";
+            this.Fechaventa.ReadOnly = true;
             this.Fechaventa.Size = new System.Drawing.Size(133, 20);
             this.Fechaventa.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 154);
+            this.label3.Location = new System.Drawing.Point(36, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 11;
@@ -264,24 +296,18 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             // 
-            // Calendario
-            // 
-            this.Calendario.Location = new System.Drawing.Point(76, 79);
-            this.Calendario.Name = "Calendario";
-            this.Calendario.Size = new System.Drawing.Size(200, 20);
-            this.Calendario.TabIndex = 9;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnBuscar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnBuscar.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources._64673;
-            this.btnBuscar.Location = new System.Drawing.Point(291, 79);
+            this.btnBuscar.Location = new System.Drawing.Point(584, 78);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(22, 20);
             this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBuscar.TabIndex = 8;
             this.btnBuscar.TabStop = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label2
             // 
@@ -320,6 +346,32 @@
             this.textBox1.Size = new System.Drawing.Size(754, 60);
             this.textBox1.TabIndex = 0;
             // 
+            // btnimprimir
+            // 
+            this.btnimprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnimprimir.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnimprimir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnimprimir.Location = new System.Drawing.Point(612, 566);
+            this.btnimprimir.Name = "btnimprimir";
+            this.btnimprimir.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnimprimir.Size = new System.Drawing.Size(127, 33);
+            this.btnimprimir.TabIndex = 155;
+            this.btnimprimir.Text = "Descargar pdf";
+            this.btnimprimir.UseVisualStyleBackColor = false;
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox8.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.printer_print_22133__1_;
+            this.pictureBox8.Location = new System.Drawing.Point(571, 566);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 33);
+            this.pictureBox8.TabIndex = 154;
+            this.pictureBox8.TabStop = false;
+            // 
             // Hitorial_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,11 +380,12 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Hitorial_Ventas";
             this.Text = "Hitorial_Ventas";
+            this.Load += new System.EventHandler(this.Hitorial_Ventas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaPComprados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaHistorial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,7 +400,6 @@
         private System.Windows.Forms.TextBox Fechaventa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker Calendario;
         private System.Windows.Forms.PictureBox btnBuscar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtnombreclie;
@@ -356,9 +408,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbltotalF;
         private System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.DataGridView grillaPComprados;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.DataGridView grillaHistorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DateTimePicker Calendario;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnimprimir;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button btnRegresar;
     }
 }

@@ -11,6 +11,7 @@ namespace Entidades
         public int IdSalida { get; set; }
         public int CodigoProducto { get; set; }
         public string Descripcion { get; set; }
+        public string Nombreproducto { get; set; }
         public int Cantidad { get; set; }
         public decimal SubTotal { get; set; }
         public decimal PrecioVenta { get; set; }

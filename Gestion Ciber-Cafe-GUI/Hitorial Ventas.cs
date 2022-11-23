@@ -58,7 +58,7 @@ namespace Gestion_Ciber_Cafe_GUI
                     grillaHistorial.Rows.Clear();
                     foreach (var item in detalleSalidas)
                     {
-                        grillaHistorial.Rows.Add(new object[] { item.CodigoProducto, item.Descripcion, item.Cantidad, item.SubTotal });
+                        grillaHistorial.Rows.Add(new object[] { item.CodigoProducto, item.Nombreproducto, item.Cantidad, item.SubTotal });
                     }
                     lbltotalF.Text = ventas.TotalVenta.ToString();
                 }

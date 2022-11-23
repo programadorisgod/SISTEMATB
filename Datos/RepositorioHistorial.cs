@@ -67,7 +67,7 @@ namespace Datos
                     cmd.AppendLine("SELECT  Producto.Nombre,Producto.Codigo, Producto.Descripcion,DETALLE_VENTAS.Codigo_producto, DETALLE_VENTAS.Cantidad, DETALLE_VENTAS.Subtotal ");
                     cmd.AppendLine("FROM  DETALLE_VENTAS inner join Producto ");
                     cmd.AppendLine("on DETALLE_VENTAS.Codigo_producto = Producto.Codigo");
-                    cmd.AppendLine("where id_detalle  = @id_salida ");
+                    cmd.AppendLine("where Id_venta  = @id_salida ");
                     SqlCommand cemd = new SqlCommand(cmd.ToString(), connection);
                     cemd.Parameters.Add(new SqlParameter("@id_salida", id_salida));
                     cemd.CommandType = System.Data.CommandType.Text;
@@ -76,7 +76,6 @@ namespace Datos
                         salidas.Add(new DetalleSalida()
                         {
                             CodigoProducto = Convert.ToInt32(reader["Codigo_producto"]),
-                            Descripcion = reader["Descripcion"].ToString(),
                             Cantidad = Convert.ToInt32(reader["Cantidad"]),
                             Nombreproducto = reader["Nombre"].ToString(),
                             SubTotal = Convert.ToDecimal(reader["Subtotal"])

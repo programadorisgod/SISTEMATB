@@ -305,17 +305,7 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (comboBoxBuscar.SelectedItem != null && textBoxBuscar.Text.Trim() != "")
-            {
-                grillaListaProductos.DataSource = servicioProducto.Search(comboBoxBuscar.SelectedItem.ToString(), textBoxBuscar.Text);
-            }
-            else
-            {
-                if (textBoxBuscar.Text.Trim() == "")
-                {
-                    grillaListaProductos.DataSource = servicioProducto.GetAll();
-                }
-            }
+
         }
 
         private void textBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)

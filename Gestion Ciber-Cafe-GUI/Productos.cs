@@ -308,12 +308,6 @@ namespace Gestion_Ciber_Cafe_GUI
                 return sr.ToArray();
             }
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             string old = textBoxBuscar.Text;
@@ -329,7 +323,7 @@ namespace Gestion_Ciber_Cafe_GUI
                     textBoxBuscar.Text = old + e.KeyChar.ToString();
                 }
             }
-            if (!char.IsControl(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) || e.KeyChar.ToString() == "\b")
             {
                 if (comboBoxBuscar.SelectedItem != null && textBoxBuscar.Text.Trim() != "")
                 {

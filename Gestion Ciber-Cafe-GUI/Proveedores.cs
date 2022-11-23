@@ -273,5 +273,44 @@ namespace Gestion_Ciber_Cafe_GUI
                 textBoxTelefono.Focus();
             }
         }
+
+        private void textBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string old = textBoxBuscar.Text;
+
+            if (e.KeyChar.ToString() == "\b" && textBoxBuscar.Text != "")
+            {
+                textBoxBuscar.Text = textBoxBuscar.Text.Remove(textBoxBuscar.Text.Length - 1);
+            }
+            else
+            {
+                if (!char.IsControl(e.KeyChar))
+                {
+                    textBoxBuscar.Text = old + e.KeyChar.ToString();
+                }
+            }
+            if (!char.IsControl(e.KeyChar) || e.KeyChar.ToString() == "\b")
+            {
+                if (comboBoxBuscar.SelectedItem != null && textBoxBuscar.Text.Trim() != "")
+                {
+                    grillaListaProveedores.DataSource = servicioProveedor.Search(comboBoxBuscar.SelectedItem.ToString(), textBoxBuscar.Text);
+                }
+                else
+                {
+                    if (textBoxBuscar.Text.Trim() == "")
+                    {
+                        grillaListaProveedores.DataSource = servicioProveedor.GetAll();
+
+                    }
+                }
+            }
+            if (char.IsControl(e.KeyChar) && textBoxBuscar.Text.Trim() == "")
+            {
+                grillaListaProveedores.DataSource = servicioProveedor.GetAll();
+            }
+
+            textBoxBuscar.Text = old;
+            textBoxBuscar.SelectionStart = textBoxBuscar.Text.Length;
+        }
     }
 }

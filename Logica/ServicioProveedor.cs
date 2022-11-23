@@ -88,5 +88,10 @@ namespace Logica
 
             return null;
         }
+
+        public List<Proveedor> Search(string attribute, string sentence)
+        {
+            return repositorioProveedor.Search(attribute, sentence);
+        }
     }
 }

@@ -94,5 +94,30 @@ namespace Datos
                 return "error al eliminar";
             }
         }
+
+        public List<Proveedor> Search(string attribute, string sentence)
+        {
+            List<Proveedor> ProviderList = new List<Proveedor>();
+            try
+            {
+                string ssql = String.Format("SELECT * FROM Proveedores WHERE " + attribute + " LIKE '%" + sentence + "%'");
+                cmd = new SqlCommand(ssql, Conexion);
+                Conexion.Open();
+                var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ProviderList.Add(new Proveedor(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                }
+                Conexion.Close();
+            }
+            catch (Exception)
+            {
+                Conexion.Close();
+                return ProviderList;
+            }
+
+            return ProviderList;
+        }
     }
 }

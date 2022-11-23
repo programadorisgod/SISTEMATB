@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -164,6 +165,29 @@ namespace Gestion_Ciber_Cafe_GUI
             {
                 textBoxPrecioCompra.Focus();
             }
+        }
+
+        private void comboBoxBuscar_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.SelectedItem.ToString() == "FechaRegistro" && dateBuscar.Visible == false)
+            {
+                textBoxBuscar.Visible = false;
+                dateBuscar.Visible = true;
+            }
+            else
+            {
+                if (comboBoxBuscar.SelectedItem.ToString() != "FechaRegistro")
+                {
+                    dateBuscar.Visible = false;
+                    textBoxBuscar.Visible = true;
+                }
+            }
+        }
+
+        private void dateBuscar_ValueChanged(object sender, EventArgs e)
+        {
+            //servicioEntrada sender.ToString().Remove(0,44);
+            grillaRegistroEntradas.DataSource = servicioEntrada.Search(comboBoxBuscar.SelectedItem.ToString(), Convert.ToDateTime(dateBuscar.Value.ToString("yyyy-MM-dd")).ToString());
         }
     }
 }

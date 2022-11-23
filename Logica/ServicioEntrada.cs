@@ -45,5 +45,10 @@ namespace Logica
 
             }
         }
+
+        public List<VistaEntradaProducto> Search(string attribute, string sentence)
+        {
+            return repositorioEntrada.Search(attribute, sentence);
+        }
     }
 }

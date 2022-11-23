@@ -67,29 +67,29 @@ namespace Datos
             return ListViewEntrance;
         }
 
-        public List<EntradaProducto> Search(string attribute, string sentence)
+        public List<VistaEntradaProducto> Search(string attribute, string sentence)
         {
-            List<EntradaProducto> EntranceList = new List<EntradaProducto>();
+            List<VistaEntradaProducto> ListViewEntrance = new List<VistaEntradaProducto>();
             try
             {
-                string ssql = String.Format("SELECT * FROM Entrada WHERE " + attribute + " LIKE '%" + sentence + "%'");
+                string ssql = String.Format("SELECT entry.FechaRegistro, CONCAT(entry.id_proveedor, '/', (SELECT Nombre FROM Proveedores WHERE id_provedor = entry.id_proveedor)), CONCAT(entry.codigo_producto, '/', (SELECT Nombre FROM Producto WHERE Codigo = entry.codigo_producto)), Cantidad, Precio_compra, Monto_total FROM Entrada entry WHERE " + attribute + " LIKE '%" + sentence + "%'");
                 cmd = new SqlCommand(ssql, Conexion);
                 Conexion.Open();
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    EntranceList.Add(new EntradaProducto(reader.GetInt32(0), reader.GetDateTime(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), double.Parse(reader.GetDecimal(5).ToString()), double.Parse(reader.GetDecimal(6).ToString())));
+                    ListViewEntrance.Add(new VistaEntradaProducto(reader.GetDateTime(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), double.Parse(reader.GetDecimal(4).ToString()), double.Parse(reader.GetDecimal(5).ToString())));
                 }
                 Conexion.Close();
             }
             catch (Exception)
             {
                 Conexion.Close();
-                return EntranceList;
+                return ListViewEntrance;
             }
 
-            return EntranceList;
+            return ListViewEntrance;
         }
     }
 }

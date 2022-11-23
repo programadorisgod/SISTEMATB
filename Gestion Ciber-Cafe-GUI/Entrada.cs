@@ -187,7 +187,6 @@ namespace Gestion_Ciber_Cafe_GUI
         private void dateBuscar_ValueChanged(object sender, EventArgs e)
         {
             //servicioEntrada sender.ToString().Remove(0,44);
-            grillaRegistroEntradas.DataSource = servicioEntrada.Search(comboBoxBuscar.SelectedItem.ToString(), Convert.ToDateTime(dateBuscar.Value.ToString("yyyy-MM-dd")).ToString());
         }
     }
 }

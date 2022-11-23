@@ -139,7 +139,7 @@ namespace Datos
                 Cerrar();
                 return cliente;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 cliente = new List<Cliente> ();
             }

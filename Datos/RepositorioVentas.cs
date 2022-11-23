@@ -25,7 +25,7 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@Cantidad", cantidad);
                 respuesta = cmd.ExecuteNonQuery();
             }
-            catch (Exception d)
+            catch (Exception )
             {
                 respuesta = 0;
             }

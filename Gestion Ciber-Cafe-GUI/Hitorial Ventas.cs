@@ -94,7 +94,7 @@ namespace Gestion_Ciber_Cafe_GUI
                 MessageBox.Show("Por favor ingrese el nombre del cliente ", "¡Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
            
-            string nombredoc = "Reporte";
+          
             contador++;
             string paginahtml = Properties.Resources.PlatillaPdf.ToString();
             Administrador admin = administrador.Obtener();

@@ -136,7 +136,7 @@ namespace Datos
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 reporteVentas = new List<ReporteVentas>();

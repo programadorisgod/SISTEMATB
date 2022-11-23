@@ -163,7 +163,8 @@ namespace Gestion_Ciber_Cafe_GUI
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-
+            //Codigo...
+            OcultarSubmenu();
         }
     }
 }

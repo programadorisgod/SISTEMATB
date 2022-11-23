@@ -36,7 +36,6 @@
             this.seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaProductos)).BeginInit();
@@ -81,7 +80,6 @@
             this.seleccionar,
             this.Codigo,
             this.Nombre,
-            this.Descripcion,
             this.Stock,
             this.PrecioVenta});
             this.GrillaProductos.Location = new System.Drawing.Point(8, 64);
@@ -120,15 +118,6 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Descripcion.Width = 230;
-            // 
             // Stock
             // 
             this.Stock.HeaderText = "Stock";
@@ -166,7 +155,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn seleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
     }

@@ -92,7 +92,7 @@ namespace Gestion_Ciber_Cafe_GUI
                         GrillaClientes.Rows.Add(new object[]
                         {"",
                         txtcodigoproducto.Text,
-                        txtDescripcion.Text,
+                        txtnombreproducto.Text,
                         txtCantidad.Value.ToString(),
                         precioventa.ToString(),
                         subtotal.ToString()
@@ -107,7 +107,7 @@ namespace Gestion_Ciber_Cafe_GUI
             }
 
             txtcodigoproducto.Text = string.Empty;
-            txtDescripcion.Text = string.Empty;
+            txtnombreproducto.Text = string.Empty;
             txtStock.Text = string.Empty;
             txtCantidad.Value = 1;
         }
@@ -132,7 +132,7 @@ namespace Gestion_Ciber_Cafe_GUI
                     detalleSalidas.Add(new DetalleSalida()
                     {
                         CodigoProducto = Convert.ToInt32(item.Cells["Codigo"].Value.ToString()),
-                        Descripcion = item.Cells["Descripcion"].Value.ToString(),
+                        Nombreproducto= item.Cells["Nombre"].Value.ToString(),
                         PrecioVenta = Convert.ToDecimal(item.Cells["Precio"].Value.ToString()),
                         Cantidad = Convert.ToInt32(item.Cells["Cantidads"].Value.ToString()),
                         SubTotal = Convert.ToDecimal(item.Cells["Subtotal"].Value.ToString())
@@ -231,7 +231,7 @@ namespace Gestion_Ciber_Cafe_GUI
                 if (result == DialogResult.OK)
                 {
                     txtcodigoproducto.Text = form.codigo_.ToString();
-                    txtDescripcion.Text = form.descripcion_;
+                    txtnombreproducto.Text = form.nombre_.ToString();
                     txtStock.Text = form.stock_.ToString();
                     precioventa_ = form.precioventa_;
 

@@ -16,7 +16,7 @@ namespace Gestion_Ciber_Cafe_GUI
         int p = -1;
         Logica.ServicioProducto servicioProducto = new Logica.ServicioProducto();
         public int codigo_ { get; set; }
-        public string descripcion_ { get; set; }
+        public string nombre_ { get; set; }
         public int stock_ { get; set; }
         public string precioventa_ { get; set; }
         public ListarProductos()
@@ -32,7 +32,6 @@ namespace Gestion_Ciber_Cafe_GUI
                     "",
                     item.Codigo,
                     item.Nombre,
-                    item.Descripcion,
                     item.Stock,
                     item.ValorVenta
                     
@@ -57,7 +56,7 @@ namespace Gestion_Ciber_Cafe_GUI
                 if (GrillaProductos.Columns[e.ColumnIndex].Name == "seleccionar")
                 {
                     codigo_ = Convert.ToInt32(GrillaProductos.Rows[p].Cells["Codigo"].Value.ToString());
-                    descripcion_ = GrillaProductos.Rows[p].Cells["Descripcion"].Value.ToString();
+                    nombre_ = GrillaProductos.Rows[p].Cells["Nombre"].Value.ToString();
                     stock_ = Convert.ToInt32(GrillaProductos.Rows[p].Cells["Stock"].Value.ToString());
                     precioventa_ = GrillaProductos.Rows[p].Cells["PrecioVenta"].Value.ToString();
                     this.DialogResult = DialogResult.OK;

@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Diagrama de clases Logica.cd" />
     <None Include="Logica.cd" />
     <None Include="packages.config" />

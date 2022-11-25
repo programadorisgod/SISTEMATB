@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logica.ServicioCliente" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAACAEAAAACAgAABAAAQIA=</HashCode>
+      <FileName>ServicioCliente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Logica.ServicioEntrada">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAgAAAAAAAAAAEAAgAABABgAAA=</HashCode>
+      <FileName>ServicioEntrada.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.ServicioHistorial">
+    <Position X="6.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEUAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServicioHistorial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.ServicioProducto" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAEAAAACAgAABACgAIA=</HashCode>
+      <FileName>ServicioProducto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Logica.ServicioProveedor">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAEAAAACAgAABAAgEIA=</HashCode>
+      <FileName>ServicioProveedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.ServiciosAdministrador" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ServiciosAdministrador.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Logica.ServicioVentas">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAQEAAAAAAAIACICAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServicioVentas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Logica.IserviceAdmin" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IserviceAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logica.Iservices&lt;T&gt;">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAgAABAAAAIA=</HashCode>
+      <FileName>Iservices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logica.IserviceStandard&lt;T&gt;">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAgAABAAAAIA=</HashCode>
+      <FileName>IserviceStandard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

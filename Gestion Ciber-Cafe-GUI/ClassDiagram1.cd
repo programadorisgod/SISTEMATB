@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Gestion_Ciber_Cafe_GUI.Clientes" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DxCAIgAJJHYACBgEgiyBSFECiUiAAEBhYvFmJAPZbgA=</HashCode>
+      <FileName>Clientes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Entrada" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQgBMAEABOgACBAAQCCJRDMiCgIhQAAIAwgABQDQIAE=</HashCode>
+      <FileName>Entrada.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Hitorial_Ventas" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIBgEUAMSACCBQEAACAAAACIAoAAIIBECkgAEAgAAA=</HashCode>
+      <FileName>Hitorial Ventas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.ListarClietnes" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAoABCAEABIAAACAgAACAAAAAABAEEBAAAAAEAA=</HashCode>
+      <FileName>ListarClietnes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.ListarProductos" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAABBAAAICEgACWiAAAIIBQEEAAAAAABAA=</HashCode>
+      <FileName>ListarProductos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Login" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIRAlABBCAAAAAAgCCAygBCAJAQAkAAIAEQAABwQAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Principal" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAUApIAACAAAAACgCSAQABiABQABAwQKYIggBJYQNM=</HashCode>
+      <FileName>Principal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Productos" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIARQhgABiREGQcohCCAQBUCCgBgEhAI4BgABYBwegk=</HashCode>
+      <FileName>Productos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Program" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Proveedores" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AaABIDCAJCQACBYYgCCAWBEGCkNAUQAIIFgABQBQIAE=</HashCode>
+      <FileName>Proveedores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Reporte_de_ventas" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAQAIAUEAiACABQAABCAgAAWAQCAAIACECgQAEAAAAA=</HashCode>
+      <FileName>Reporte de ventas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Ventas" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAIBAAcAFTJHFBEEAACAgAIaCAAgQYIAkCkAAUAAQAQ=</HashCode>
+      <FileName>Ventas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAGCCAiQgAAIAAIAAABMEQCCUBBCYMBBAJgAAMEEYY=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gestion_Ciber_Cafe_GUI.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -36,7 +36,11 @@ namespace Gestion_Ciber_Cafe_GUI
         {
 
         }
-
+        /// <summary>
+        /// Permite realizar la busqueda de la venta realizada en X fecha seleccionada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (Calendario.Value > DateTime.Now)
@@ -75,7 +79,11 @@ namespace Gestion_Ciber_Cafe_GUI
 
 
         }
-
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -86,6 +94,13 @@ namespace Gestion_Ciber_Cafe_GUI
 
         }
 
+
+
+        /// <summary>
+        /// Permite generar un documento en formato PDF con el uso del nuget XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnimprimir_Click(object sender, EventArgs e)
         {
 

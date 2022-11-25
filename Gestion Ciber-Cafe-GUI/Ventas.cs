@@ -59,6 +59,11 @@ namespace Gestion_Ciber_Cafe_GUI
             }
         }
 
+        /// <summary>
+        /// Obtiene los valores que estan en los clientes y los refleja en los textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             using (var form = new ListarClietnes())
@@ -72,6 +77,11 @@ namespace Gestion_Ciber_Cafe_GUI
             }
         }
 
+        /// <summary>
+        /// Permite agregar otro producto a la grilla.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btnotro_Click(object sender, EventArgs e)
         {
 
@@ -118,6 +128,10 @@ namespace Gestion_Ciber_Cafe_GUI
             txtCantidad.Value = 1;
         }
 
+
+        /// <summary>
+        /// Permite  realizar la salida de los productos.
+        /// </summary>
         void RealizarVenta()
         {
             if (DocClien.Text.Trim() == "")
@@ -167,7 +181,10 @@ namespace Gestion_Ciber_Cafe_GUI
             }
 
         }
-
+        /// <summary>
+        /// Comprueba si el producto que se va agregar, ya se encuentra en la grilla.
+        /// </summary>
+        /// <returns>un valor true or false, dependiendo del caso</returns>
         private bool YaExiste()
         {
             bool mensaje = false;
@@ -191,6 +208,10 @@ namespace Gestion_Ciber_Cafe_GUI
         {
             RealizarVenta();
         }
+       
+        /// <summary>
+        /// Calcula el total a pagar en la venta realizada
+        /// </summary>
         void CalcularTotalPagar()
         {
             decimal total = 0;
@@ -204,6 +225,11 @@ namespace Gestion_Ciber_Cafe_GUI
             lbltotalF.Text = total.ToString();
         }
 
+        /// <summary>
+        /// Elimina el producto seleccionado en la grilla.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GrillaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string mensaje = string.Empty;
@@ -229,6 +255,11 @@ namespace Gestion_Ciber_Cafe_GUI
             }
         }
 
+        /// <summary>
+        ///  Asinga los valores de los productos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntBuscarProducto_Click(object sender, EventArgs e)
         {
             using (var form = new ListarProductos())
@@ -261,7 +292,11 @@ namespace Gestion_Ciber_Cafe_GUI
         {
 
         }
-
+        /// <summary>
+        /// Captura el puntero del mouse, para que pueda realizar el movimiento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ventas_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

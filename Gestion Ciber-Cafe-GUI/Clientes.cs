@@ -35,17 +35,27 @@ namespace Gestion_Ciber_Cafe_GUI
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+      
+
+
+        /// <summary>
+        ///  limpia los Textbox y los deja vacios.
+        /// </summary>
         void Limpiar()
         {
-            txtcedula.Text = " ";
-            txtnombre.Text = " ";
-            txtTelefono.Text = " ";
-            txtDireccion.Text = " ";
-            txtCorreo.Text = " ";
+            txtcedula.Text = string.Empty;
+            txtnombre.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtCorreo.Text = string.Empty;
         }
+
+        /// <summary>
+        /// Este metodo sirve para guardar y editar los clientes.
+        /// </summary>
         void Guardar()
         {
-            if (txtcedula.Text == "" || txtnombre.Text == "" || txtTelefono.Text == " " || txtDireccion.Text == " " || txtCorreo.Text == " ")
+            if (txtcedula.Text == string.Empty || txtnombre.Text == string.Empty || txtTelefono.Text == string.Empty || txtDireccion.Text == string.Empty || txtCorreo.Text == string.Empty)
             {
                 MessageBox.Show("Llene todos los campos, por favor");
             }
@@ -133,7 +143,10 @@ namespace Gestion_Ciber_Cafe_GUI
         {
             dataGridView1.DataSource = servicioCliente.GetAll();
         }
-       
+        
+        /// <summary>
+        /// Permite la edicion del cliente, desde el boton editar.
+        /// </summary>
         void Editar()
         {
             Entidades.Cliente clienteold = new Entidades.Cliente();
@@ -264,18 +277,23 @@ namespace Gestion_Ciber_Cafe_GUI
                 txtDireccion.Focus();
             }
         }
-
+        /// <summary>
+        ///  Captura el puntero, para permitir el movimiento del formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Clientes_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        /// <summary>
+        /// Este metodo, permite crear un reporte en formato PDF.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnimprimir_Click(object sender, EventArgs e)
         {
             string nombredoc = "Listado de clientes";
@@ -367,7 +385,7 @@ namespace Gestion_Ciber_Cafe_GUI
             Guardar();
             Refres();
         }
-
+       
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (txtcedula.Text == "" || txtnombre.Text == "" || txtTelefono.Text == " " || txtDireccion.Text == " " || txtCorreo.Text == " ")
@@ -382,7 +400,9 @@ namespace Gestion_Ciber_Cafe_GUI
             }
 
         }
-
+        /// <summary>
+        /// Este metodo, permite eliminar el cliente seleccionado.
+        /// </summary>
         void Eliminar()
         {
 
@@ -422,7 +442,11 @@ namespace Gestion_Ciber_Cafe_GUI
         {
 
         }
-
+        /// <summary>
+        /// Permite realizar la busqueda del cliente, por su cedula.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntBuscarProducto_Click(object sender, EventArgs e)
         {
             if (txtCC.Text == "")

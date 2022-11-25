@@ -61,6 +61,7 @@
             this.label1.Size = new System.Drawing.Size(279, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Productos Registrados";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // GrillaProductos
             // 

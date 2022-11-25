@@ -21,6 +21,9 @@ namespace Gestion_Ciber_Cafe_GUI
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Permite cargar la grilla.
+        /// </summary>
 
         void Refres()
         {
@@ -35,6 +38,11 @@ namespace Gestion_Ciber_Cafe_GUI
             Refres();
         }
 
+        /// <summary>
+        ///  asigna los valores que se encuentran en la grilla, a las variables.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GrillaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             p = e.RowIndex;

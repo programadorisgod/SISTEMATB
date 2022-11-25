@@ -52,6 +52,12 @@ namespace Gestion_Ciber_Cafe_GUI
 
         }
 
+        /// <summary>
+        /// Permite realizar una busqueda  de las ventas realizadas, entre las  fechas seleccionadas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             GrillaReportes.Rows.Clear();

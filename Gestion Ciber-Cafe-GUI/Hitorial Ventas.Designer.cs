@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnimprimir = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -37,6 +37,10 @@
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.Calendario = new System.Windows.Forms.DateTimePicker();
             this.grillaHistorial = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nomp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.lbltotalF = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
@@ -53,10 +57,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nomp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaHistorial)).BeginInit();
@@ -90,7 +90,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(754, 615);
+            this.groupBox1.Size = new System.Drawing.Size(753, 619);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -102,7 +102,7 @@
             this.btnimprimir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnimprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnimprimir.Location = new System.Drawing.Point(612, 566);
+            this.btnimprimir.Location = new System.Drawing.Point(611, 566);
             this.btnimprimir.Name = "btnimprimir";
             this.btnimprimir.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.btnimprimir.Size = new System.Drawing.Size(127, 33);
@@ -115,7 +115,7 @@
             // 
             this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox8.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.printer_print_22133__1_;
-            this.pictureBox8.Location = new System.Drawing.Point(571, 566);
+            this.pictureBox8.Location = new System.Drawing.Point(570, 566);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(35, 33);
             this.pictureBox8.TabIndex = 154;
@@ -148,15 +148,15 @@
             // 
             this.grillaHistorial.AllowUserToAddRows = false;
             this.grillaHistorial.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grillaHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grillaHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.grillaHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -167,15 +167,49 @@
             this.grillaHistorial.MultiSelect = false;
             this.grillaHistorial.Name = "grillaHistorial";
             this.grillaHistorial.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.grillaHistorial.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.grillaHistorial.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.grillaHistorial.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
             this.grillaHistorial.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.grillaHistorial.RowTemplate.Height = 24;
             this.grillaHistorial.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.grillaHistorial.Size = new System.Drawing.Size(686, 257);
             this.grillaHistorial.TabIndex = 150;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Nomp
+            // 
+            this.Nomp.HeaderText = "Nombre producto";
+            this.Nomp.Name = "Nomp";
+            this.Nomp.ReadOnly = true;
+            this.Nomp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Nomp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Nomp.Width = 270;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Cantidad.Width = 70;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SubTotal.Width = 80;
             // 
             // btnRegresar
             // 
@@ -186,7 +220,7 @@
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.arrow_left_12777;
             this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.Location = new System.Drawing.Point(613, 12);
+            this.btnRegresar.Location = new System.Drawing.Point(612, 12);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 1);
             this.btnRegresar.Size = new System.Drawing.Size(127, 33);
@@ -337,50 +371,19 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(754, 60);
             this.textBox1.TabIndex = 0;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Nomp
-            // 
-            this.Nomp.HeaderText = "Nombre producto";
-            this.Nomp.Name = "Nomp";
-            this.Nomp.ReadOnly = true;
-            this.Nomp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Nomp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Nomp.Width = 270;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Cantidad.Width = 70;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.SubTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SubTotal.Width = 80;
+            this.textBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDown);
             // 
             // Hitorial_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 611);
+            this.ClientSize = new System.Drawing.Size(756, 616);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hitorial_Ventas";
             this.Text = "Hitorial_Ventas";
             this.Load += new System.EventHandler(this.Hitorial_Ventas_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Hitorial_Ventas_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,10 +25,15 @@ namespace Gestion_Ciber_Cafe_GUI
         Logica.ServicioProducto servicioProducto = new Logica.ServicioProducto();
         Entidades.Ventas ventas = new Entidades.Ventas();
         Entidades.Producto producto = new Entidades.Producto();
+
         public Ventas()
         {
             InitializeComponent();
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void Ventas_Load(object sender, EventArgs e)
         {
@@ -249,6 +255,23 @@ namespace Gestion_Ciber_Cafe_GUI
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Ventas_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 

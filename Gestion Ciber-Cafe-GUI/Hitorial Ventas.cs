@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Gestion_Ciber_Cafe_GUI
 {
@@ -27,12 +28,15 @@ namespace Gestion_Ciber_Cafe_GUI
             InitializeComponent();
         }
 
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void Hitorial_Ventas_Load(object sender, EventArgs e)
         {
 
         }
-       
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (Calendario.Value > DateTime.Now)
@@ -85,7 +89,7 @@ namespace Gestion_Ciber_Cafe_GUI
         private void btnimprimir_Click(object sender, EventArgs e)
         {
 
-            if (txtCedula.Text =="")
+            if (txtCedula.Text == "")
             {
                 MessageBox.Show("Por favor ingrese la cedula", "¡Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -93,16 +97,16 @@ namespace Gestion_Ciber_Cafe_GUI
             {
                 MessageBox.Show("Por favor ingrese el nombre del cliente ", "¡Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-           
-          
+
+
             contador++;
             string paginahtml = Properties.Resources.PlatillaPdf.ToString();
             Administrador admin = administrador.Obtener();
             paginahtml = paginahtml.Replace("@Administrador", admin.Nombre.ToString());
             paginahtml = paginahtml.Replace("@DOCUMENTO", admin.Cedula.ToString());
-            paginahtml = paginahtml.Replace("@Cliente", txtnombreclie.Text); 
+            paginahtml = paginahtml.Replace("@Cliente", txtnombreclie.Text);
             paginahtml = paginahtml.Replace("@DOCCLIENTE", txtCedula.Text);
-            paginahtml = paginahtml.Replace("@fecharegistro", DateTime.Now.ToString("dd/MM/yyyy")); 
+            paginahtml = paginahtml.Replace("@fecharegistro", DateTime.Now.ToString("dd/MM/yyyy"));
             paginahtml = paginahtml.Replace("@numero", contador.ToString());
             string filas = string.Empty;
             foreach (DataGridViewRow row in grillaHistorial.Rows)
@@ -118,7 +122,7 @@ namespace Gestion_Ciber_Cafe_GUI
             paginahtml = paginahtml.Replace("@montototal", lbltotalF.Text);
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.FileName =  DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
+            saveFile.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
             saveFile.Filter = "Pdf Files|*.pdf";
 
             if (saveFile.ShowDialog() == DialogResult.OK)
@@ -129,7 +133,7 @@ namespace Gestion_Ciber_Cafe_GUI
 
                     PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
-                   // pdfDoc.Add(new Phrase(""));
+                    // pdfDoc.Add(new Phrase(""));
 
                     iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Stacked_Red_Boxes_35541, System.Drawing.Imaging.ImageFormat.Png);
                     img.ScaleToFit(60, 60);
@@ -148,6 +152,18 @@ namespace Gestion_Ciber_Cafe_GUI
                 }
 
             }
+        }
+
+        private void Hitorial_Ventas_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

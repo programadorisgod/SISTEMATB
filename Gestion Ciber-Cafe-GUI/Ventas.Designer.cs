@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GrillaClientes = new System.Windows.Forms.DataGridView();
+            this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidads = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnventa = new System.Windows.Forms.Button();
@@ -57,12 +63,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidads = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
@@ -99,25 +99,26 @@
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 0);
+            this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(865, 598);
+            this.groupBox1.Size = new System.Drawing.Size(868, 598);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // GrillaClientes
             // 
             this.GrillaClientes.AllowUserToAddRows = false;
             this.GrillaClientes.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrillaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrillaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GrillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eliminar,
@@ -130,14 +131,62 @@
             this.GrillaClientes.MultiSelect = false;
             this.GrillaClientes.Name = "GrillaClientes";
             this.GrillaClientes.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.GrillaClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.GrillaClientes.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.GrillaClientes.RowTemplate.Height = 24;
             this.GrillaClientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GrillaClientes.Size = new System.Drawing.Size(734, 252);
             this.GrillaClientes.TabIndex = 152;
             this.GrillaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaClientes_CellContentClick);
+            // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "";
+            this.eliminar.Name = "eliminar";
+            this.eliminar.ReadOnly = true;
+            this.eliminar.Width = 35;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo Producto";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Codigo.Width = 110;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Nombre.Width = 280;
+            // 
+            // Cantidads
+            // 
+            this.Cantidads.HeaderText = "Cantidad";
+            this.Cantidads.Name = "Cantidads";
+            this.Cantidads.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio Venta";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Precio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Precio.Width = 80;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SubTotal.Width = 80;
             // 
             // Fecha
             // 
@@ -156,7 +205,7 @@
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.Image = global::Gestion_Ciber_Cafe_GUI.Properties.Resources.arrow_left_12777;
             this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.Location = new System.Drawing.Point(720, 16);
+            this.btnRegresar.Location = new System.Drawing.Point(735, 19);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 1);
             this.btnRegresar.Size = new System.Drawing.Size(127, 33);
@@ -172,7 +221,7 @@
             this.btnventa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnventa.Location = new System.Drawing.Point(720, 555);
+            this.btnventa.Location = new System.Drawing.Point(723, 555);
             this.btnventa.Name = "btnventa";
             this.btnventa.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.btnventa.Size = new System.Drawing.Size(127, 33);
@@ -390,66 +439,21 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(859, 60);
+            this.textBox1.Size = new System.Drawing.Size(868, 69);
             this.textBox1.TabIndex = 1;
-            // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "";
-            this.eliminar.Name = "eliminar";
-            this.eliminar.ReadOnly = true;
-            this.eliminar.Width = 35;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo Producto";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Codigo.Width = 110;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Nombre.Width = 280;
-            // 
-            // Cantidads
-            // 
-            this.Cantidads.HeaderText = "Cantidad";
-            this.Cantidads.Name = "Cantidads";
-            this.Cantidads.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio Venta";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Precio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Precio.Width = 80;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.SubTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SubTotal.Width = 80;
+            this.textBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDown);
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 596);
+            this.ClientSize = new System.Drawing.Size(872, 599);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ventas";
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventas_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaClientes)).EndInit();

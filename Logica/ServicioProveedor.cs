@@ -91,6 +91,10 @@ namespace Logica
 
         public List<Proveedor> Search(string attribute, string sentence)
         {
+            if (attribute == "Cedula")
+            {
+                attribute = "id_provedor";
+            }
             return repositorioProveedor.Search(attribute, sentence);
         }
     }
